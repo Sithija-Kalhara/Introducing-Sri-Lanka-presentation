@@ -1,0 +1,806 @@
+/* Charts Section Styles - Fully Responsive */
+
+.charts-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #050a15 0%, #0a1220 100%);
+}
+
+/* Background decoration */
+.charts-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.03), transparent 70%);
+  pointer-events: none;
+}
+
+/* Particle Background */
+.charts-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.charts-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px);
+    opacity: 0.5;
+  }
+}
+
+
+/* Title Wrapper */
+.title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Charts Container */
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+/* Chart Cards */
+.chart-card {
+  background: rgba(10, 18, 32, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 25px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Chart Header */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chart-title {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.chart-badge {
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Chart Visualization Wrapper */
+.chart-viz-wrapper {
+  width: 100%;
+  height: 350px;
+  margin: 10px 0;
+}
+
+/* Chart Description */
+.chart-description {
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: center;
+  letter-spacing: 0.3px;
+}
+
+/* Decoration */
+.charts-decoration {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.06);
+  z-index: 1;
+  font-family: monospace;
+  letter-spacing: 3px;
+  pointer-events: none;
+}
+
+/* ============================================
+   CHART COLOR FIXES - MAKE BARS VISIBLE
+   ============================================ */
+
+/* Bar Chart Colors */
+.recharts-bar-rectangle {
+  fill: url(#barGradient) !important;
+  transition: all 0.3s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  fill: url(#barHoverGradient) !important;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+}
+
+/* Pie Chart Colors */
+.recharts-pie-sector {
+  transition: all 0.3s ease;
+  stroke: rgba(10, 18, 32, 0.5);
+  stroke-width: 2px;
+}
+
+.recharts-pie-sector:hover {
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+  transform: scale(1.02);
+}
+
+/* Line Chart Colors */
+.recharts-line-curve {
+  stroke-width: 2.5px;
+  filter: drop-shadow(0 0 4px rgba(168, 85, 247, 0.3));
+}
+
+.recharts-line-dot {
+  fill: #a855f7;
+  stroke: #fff;
+  stroke-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.recharts-line-dot:hover {
+  fill: #fdb913;
+  transform: scale(1.3);
+}
+
+/* Area Chart Colors */
+.recharts-area-area {
+  opacity: 0.3;
+}
+
+.recharts-area-area {
+  fill: url(#areaGradient) !important;
+}
+
+/* Scatter Plot Colors */
+.recharts-scatter-symbol {
+  fill: #a855f7;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.recharts-scatter-symbol:hover {
+  fill: #fdb913;
+  transform: scale(1.3);
+}
+
+/* Radar Chart Colors */
+.recharts-polar-angle-axis-tick-value {
+  fill: rgba(255, 255, 255, 0.7);
+  font-size: 10px;
+}
+
+.recharts-polar-grid {
+  stroke: rgba(168, 85, 247, 0.2);
+}
+
+/* Error Bar Fix */
+.recharts-errorbar-line {
+  stroke: #a855f7;
+  stroke-width: 2px;
+}
+
+.recharts-errorbar-caption {
+  fill: #a855f7;
+  font-size: 10px;
+}
+
+/* Box Plot Specific Fixes */
+.recharts-boxplot-box {
+  fill: url(#boxGradient) !important;
+  stroke: #a855f7 !important;
+  stroke-width: 2px !important;
+  transition: all 0.3s ease;
+}
+
+.recharts-boxplot-box:hover {
+  fill: url(#boxHoverGradient) !important;
+  filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.5));
+}
+
+.recharts-boxplot-median {
+  stroke: #fdb913 !important;
+  stroke-width: 2.5px !important;
+}
+
+.recharts-boxplot-whisker {
+  stroke: #a855f7 !important;
+  stroke-width: 1.5px !important;
+}
+
+.recharts-boxplot-stem {
+  stroke: #a855f7 !important;
+  stroke-width: 1.5px !important;
+}
+
+/* Tooltip Colors */
+.custom-tooltip {
+  background: rgba(10, 18, 32, 0.95);
+  border: 1px solid #a855f7;
+  border-radius: 12px;
+  padding: 12px 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.custom-tooltip-label {
+  color: #a855f7;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+  padding-bottom: 4px;
+}
+
+.custom-tooltip-value {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.custom-tooltip-unit {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+/* Active States */
+.recharts-active-dot {
+  fill: #fdb913 !important;
+  stroke: #fff !important;
+  stroke-width: 3px !important;
+  r: 8px !important;
+}
+
+.recharts-active-bar {
+  fill: url(#barHoverGradient) !important;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+}
+
+/* Legend Colors */
+.recharts-legend-item {
+  cursor: pointer;
+}
+
+.recharts-legend-item-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 12px !important;
+  transition: color 0.3s ease;
+}
+
+.recharts-legend-item:hover .recharts-legend-item-text {
+  color: #a855f7 !important;
+}
+
+/* Axis Colors */
+.recharts-cartesian-axis-line {
+  stroke: rgba(168, 85, 247, 0.2);
+}
+
+.recharts-cartesian-axis-tick-line {
+  stroke: rgba(168, 85, 247, 0.2);
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+}
+
+/* Grid Lines */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(168, 85, 247, 0.08);
+}
+
+/* Reference Line */
+.recharts-reference-line-line {
+  stroke: #fdb913;
+  stroke-width: 2px;
+  stroke-dasharray: 5 5;
+}
+
+/* Brush */
+.recharts-brush {
+  fill: rgba(168, 85, 247, 0.1);
+  stroke: #a855f7;
+}
+
+/* Tooltip Wrapper */
+.recharts-tooltip-wrapper {
+  z-index: 100;
+}
+
+.recharts-default-tooltip {
+  background-color: rgba(10, 18, 32, 0.95) !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  border-radius: 10px !important;
+  backdrop-filter: blur(10px);
+  padding: 10px !important;
+}
+
+.recharts-tooltip-label {
+  color: #fff !important;
+  margin-bottom: 5px !important;
+}
+
+.recharts-tooltip-item {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 12px !important;
+}
+
+/* Animations */
+@keyframes barRise {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  to {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+}
+
+.recharts-bar-rectangle {
+  animation: barRise 0.5s ease-out;
+}
+
+@keyframes chartPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(168, 85, 247, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+  }
+}
+
+.recharts-active-dot {
+  animation: chartPulse 2s infinite;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+  .charts-container {
+    gap: 25px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .charts-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .charts-container {
+    gap: 25px;
+  }
+  
+  .chart-card {
+    padding: 20px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+  }
+  
+  .chart-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .charts-section {
+    padding: 2rem 1.2rem;
+  }
+  
+  .slide-title-neon {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  
+  .chart-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 280px;
+  }
+  
+  .chart-header {
+    margin-bottom: 15px;
+  }
+  
+  .chart-title {
+    font-size: 1rem;
+  }
+  
+  .chart-badge {
+    font-size: 0.65rem;
+    padding: 3px 10px;
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    font-size: 9px;
+  }
+  
+  .recharts-legend-item-text {
+    font-size: 10px !important;
+  }
+  
+  .recharts-default-tooltip {
+    padding: 6px !important;
+  }
+  
+  .recharts-tooltip-item {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .charts-section {
+    padding: 1.8rem 1rem;
+  }
+  
+  .chart-card {
+    padding: 15px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 260px;
+  }
+  
+  .chart-description {
+    margin-top: 15px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .charts-section {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .slide-title-neon {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  .chart-card {
+    padding: 12px;
+    border-radius: 16px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 240px;
+  }
+  
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .chart-title {
+    font-size: 0.95rem;
+  }
+  
+  .chart-badge {
+    font-size: 0.6rem;
+  }
+  
+  .chart-description {
+    font-size: 0.65rem;
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    font-size: 8px;
+  }
+  
+  .recharts-legend-item-text {
+    font-size: 9px !important;
+  }
+  
+  .recharts-errorbar-line {
+    stroke-width: 1.5;
+  }
+  
+  .custom-tooltip {
+    padding: 6px 10px;
+  }
+  
+  .custom-tooltip-label {
+    font-size: 10px;
+  }
+  
+  .custom-tooltip-value {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .chart-viz-wrapper {
+    height: 220px;
+  }
+  
+  .chart-card {
+    padding: 10px;
+  }
+  
+  .chart-title {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .charts-section {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .slide-title-neon {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  
+  .charts-container {
+    gap: 15px;
+  }
+  
+  .chart-card {
+    padding: 12px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 200px;
+  }
+  
+  .chart-header {
+    margin-bottom: 10px;
+  }
+  
+  .chart-description {
+    margin-top: 10px;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .charts-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 280px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .charts-container {
+    max-width: 1600px;
+    gap: 35px;
+  }
+  
+  .chart-card {
+    padding: 30px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 400px;
+  }
+  
+  .chart-title {
+    font-size: 1.4rem;
+  }
+  
+  .chart-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Ultra Wide Screens */
+@media (min-width: 1920px) {
+  .charts-container {
+    max-width: 1800px;
+    gap: 40px;
+  }
+  
+  .chart-viz-wrapper {
+    height: 450px;
+  }
+  
+  .chart-card {
+    padding: 35px;
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .chart-card {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .chart-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .charts-particle,
+  .chart-card,
+  .recharts-bar-rectangle,
+  .recharts-active-dot {
+    animation: none;
+    transition: none;
+  }
+  
+  .charts-particle {
+    display: none;
+  }
+  
+  .chart-card:hover {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .charts-section {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .chart-card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+    background: white;
+    box-shadow: none;
+  }
+  
+  .charts-particles,
+  .charts-decoration {
+    display: none;
+  }
+  
+  .slide-title-neon {
+    color: black !important;
+  }
+  
+  .chart-description {
+    color: #666;
+  }
+}
+
+/* Loading State */
+.chart-card.loading {
+  background: linear-gradient(90deg, #0a1220 25%, #0f1a2a 50%, #0a1220 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Fullscreen Slide */
+.fullscreen-slide {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Focus Styles for Accessibility */
+.chart-card:focus-visible,
+.lang-switch-btn:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .chart-card {
+    border: 2px solid #a855f7;
+  }
+  
+  .chart-description {
+    color: #fff;
+  }
+  
+  .recharts-cartesian-axis-tick-value {
+    fill: #fff;
+  }
+}
+
+/* Smooth Transitions */
+.chart-card,
+.charts-particle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}

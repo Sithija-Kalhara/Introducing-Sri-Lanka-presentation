@@ -1,0 +1,759 @@
+/* Closing Section Styles - Fully Responsive */
+
+.closing-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #050a15 0%, #0a1220 100%);
+  text-align: center;
+}
+
+/* Background decoration */
+.closing-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+/* Particle Background */
+.closing-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.closing-particle {
+  position: absolute;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-50px) translateX(30px);
+    opacity: 0.5;
+  }
+}
+
+/* Floating Elements */
+.closing-floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-element {
+  position: absolute;
+  font-size: 1rem;
+  opacity: 0.05;
+  animation: floatElement 10s infinite ease-in-out;
+}
+
+.elem-1 {
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.elem-2 {
+  top: 70%;
+  right: 12%;
+  animation-delay: 2s;
+  font-size: 1.5rem;
+}
+
+.elem-3 {
+  top: 40%;
+  left: 85%;
+  animation-delay: 4s;
+  font-size: 1.2rem;
+}
+
+.elem-4 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 6s;
+  font-size: 1.3rem;
+}
+
+@keyframes floatElement {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(10deg);
+  }
+}
+
+/* Main Content Container */
+.closing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Main Title */
+.closing-title {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #a855f7, #4ade80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  white-space: pre-line;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+}
+
+/* Subtitle */
+.closing-subtitle {
+  font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+  color: rgba(168, 85, 247, 0.6);
+  letter-spacing: 4px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Profile Card */
+.closing-card {
+  background: rgba(10, 18, 32, 0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 32px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 40px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.closing-card-label {
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.closing-portfolio-url {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  color: #fff;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  word-break: break-all;
+}
+
+.closing-portfolio-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 25px 0;
+}
+
+/* Ayubowan Container */
+.closing-ayubowan-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.svg-flag-srilanka {
+  width: 48px;
+  height: 24px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.closing-card:hover .svg-flag-srilanka {
+  transform: scale(1.05);
+}
+
+.closing-ayubowan {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4ade80;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Decoration */
+.closing-decoration {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.06);
+  z-index: 1;
+  font-family: monospace;
+  letter-spacing: 3px;
+  pointer-events: none;
+}
+
+/* Copyright */
+.eyerone-copyright {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  z-index: 1;
+  font-family: monospace;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .closing-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .closing-card {
+    padding: 35px 30px;
+    max-width: 450px;
+  }
+  
+  .closing-title {
+    letter-spacing: 4px;
+  }
+}
+
+/* ---------------------------------------------------- */
+/* ඔයාගේ CSS එකේ තියෙන @media (max-width: 768px) එක මෙන්න මේකට මාරු කරන්න */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+  .closing-section {
+    padding: 3rem 1.2rem 5rem 1.2rem; /* පහළින් ඉඩ (padding-bottom) වැඩි කලා */
+    justify-content: flex-start; /* Mobile වල උඩ ඉඳන් පිළිවෙලට පටන් ගන්න */
+  }
+  
+  .closing-title {
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .closing-subtitle {
+    margin-bottom: 35px;
+    letter-spacing: 3px;
+  }
+  
+  .closing-card {
+    padding: 30px 25px;
+    max-width: 450px;
+    margin-bottom: 40px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 1.3rem;
+  }
+  
+  .closing-ayubowan-container {
+    gap: 15px;
+  }
+  
+  .svg-flag-srilanka {
+    width: 40px;
+    height: 20px;
+  }
+  
+  .closing-ayubowan {
+    font-size: 1rem;
+  }
+  
+  .closing-decoration,
+  .eyerone-copyright {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin-top: 15px;
+    display: block;
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgb(255, 255, 255); 
+  }
+}
+
+@media (max-width: 480px) {
+  .closing-section {
+    padding: 2rem 0.8rem 4rem 0.8rem;
+  }
+  
+  .closing-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+  
+  .closing-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+  
+  .closing-card {
+    padding: 20px 15px;
+    border-radius: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .closing-card-label {
+    font-size: 0.6rem;
+    padding: 3px 10px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 1rem;
+  }
+  
+  .closing-portfolio-desc {
+    font-size: 0.7rem;
+  }
+  
+  .closing-ayubowan-container {
+    gap: 10px;
+  }
+  
+  .svg-flag-srilanka {
+    width: 30px;
+    height: 15px;
+  }
+  
+  .closing-ayubowan {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  
+  /* FIXED FOR ULTRA MOBILE Screens */
+  .closing-decoration,
+  .eyerone-copyright {
+    font-size: 0.75rem;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .closing-section {
+    padding: 1.8rem 1rem;
+  }
+  
+  .closing-title {
+    letter-spacing: 2px;
+    font-size: 2rem;
+  }
+  
+  .closing-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+  }
+  
+  .closing-card {
+    padding: 25px 20px;
+  }
+  
+  .closing-card-label {
+    font-size: 0.65rem;
+    margin-bottom: 15px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 1.1rem;
+  }
+  
+  .closing-portfolio-desc {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+  }
+  
+  .closing-ayubowan-container {
+    gap: 12px;
+    padding-top: 15px;
+  }
+  
+  .svg-flag-srilanka {
+    width: 35px;
+    height: 18px;
+  }
+  
+  .closing-ayubowan {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .closing-section {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .closing-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+  
+  .closing-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+  
+  .closing-card {
+    padding: 20px 15px;
+    border-radius: 24px;
+  }
+  
+  .closing-card-label {
+    font-size: 0.6rem;
+    padding: 3px 10px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 1rem;
+  }
+  
+  .closing-portfolio-desc {
+    font-size: 0.7rem;
+  }
+  
+  .closing-ayubowan-container {
+    gap: 10px;
+  }
+  
+  .svg-flag-srilanka {
+    width: 30px;
+    height: 15px;
+  }
+  
+  .closing-ayubowan {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  
+  .closing-decoration,
+  .eyerone-copyright {
+    font-size: 0.8rem;
+  }
+  
+  .eyerone-copyright {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .closing-decoration {
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .closing-title {
+    font-size: 1.4rem;
+  }
+  
+  .closing-card {
+    padding: 18px 12px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 0.9rem;
+  }
+  
+  .closing-portfolio-desc {
+    font-size: 0.65rem;
+  }
+  
+  .closing-ayubowan {
+    font-size: 0.7rem;
+  }
+  
+  .svg-flag-srilanka {
+    width: 25px;
+    height: 13px;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .closing-section {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .closing-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .closing-subtitle {
+    margin-bottom: 20px;
+  }
+  
+  .closing-card {
+    padding: 15px 20px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  .closing-portfolio-desc {
+    margin-bottom: 15px;
+  }
+  
+  .closing-ayubowan-container {
+    padding-top: 12px;
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .closing-title {
+    font-size: 2.5rem;
+  }
+  
+  .closing-card {
+    max-width: 450px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .closing-content {
+    max-width: 1100px;
+  }
+  
+  .closing-title {
+    font-size: 5rem;
+    letter-spacing: 8px;
+  }
+  
+  .closing-card {
+    max-width: 600px;
+    padding: 50px;
+  }
+  
+  .closing-portfolio-url {
+    font-size: 2rem;
+  }
+  
+  .closing-portfolio-desc {
+    font-size: 1rem;
+  }
+  
+  .svg-flag-srilanka {
+    width: 60px;
+    height: 30px;
+  }
+  
+  .closing-ayubowan {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ultra Wide Screens */
+@media (min-width: 1920px) {
+  .closing-content {
+    max-width: 1300px;
+  }
+  
+  .closing-title {
+    font-size: 6rem;
+  }
+  
+  .closing-card {
+    max-width: 700px;
+    padding: 60px;
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .closing-card {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .closing-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .closing-particle,
+  .floating-element,
+  .closing-card,
+  .svg-flag-srilanka {
+    animation: none;
+    transition: none;
+  }
+  
+  .closing-particle {
+    display: none;
+  }
+  
+  .floating-element {
+    display: none;
+  }
+  
+  .closing-card:hover {
+    transform: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .closing-section {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .closing-card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+    background: white;
+    box-shadow: none;
+  }
+  
+  .closing-particles,
+  .closing-floating-elements,
+  .closing-decoration,
+  .eyerone-copyright {
+    font-size: 1rem;
+  }
+
+  .eyerone-copyright {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .closing-title {
+    color: black !important;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+  
+  .closing-portfolio-url {
+    color: #333;
+  }
+  
+  .svg-flag-srilanka {
+    filter: grayscale(1);
+  }
+}
+
+/* Loading State */
+.closing-card.loading {
+  background: linear-gradient(90deg, #0a1220 25%, #0f1a2a 50%, #0a1220 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Fullscreen Slide */
+.fullscreen-slide {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Focus Styles */
+.closing-card:focus-visible {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .closing-card {
+    border: 2px solid #a855f7;
+  }
+  
+  .closing-title {
+    color: #a855f7;
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+  }
+  
+  .closing-portfolio-url {
+    color: #fff;
+  }
+}
+
+/* Smooth Text Rendering */
+.closing-title,
+.closing-portfolio-url,
+.closing-ayubowan {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive Flag SVG */
+@media (max-width: 480px) {
+  .svg-flag-srilanka {
+    transform: scale(0.9);
+  }
+}
+
+.closing-presentation-url:hover {
+  color: #a855f7 !important; /* Netflix / Premium Purple Glow on Hover */
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.closing-divider {
+  width: 60%;
+  margin: 15px auto !important;
+}

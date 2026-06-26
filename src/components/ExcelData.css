@@ -1,0 +1,613 @@
+/* ExcelData Section Styles - Fully Responsive */
+
+.exceldata-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #050a15 0%, #0a1220 100%);
+}
+
+/* Background decoration */
+.exceldata-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(168, 85, 247, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+/* Grid Icon */
+.exceldata-grid-icon {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  font-size: clamp(3rem, 8vw, 6rem);
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(15deg);
+}
+
+/* Particle Background */
+.exceldata-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.exceldata-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  animation: floatParticle 8s infinite ease-in-out;
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-40px) translateX(20px);
+    opacity: 0.5;
+  }
+}
+
+
+
+/* Wrapper */
+.exceldata-table-wrapper {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+/* Controls */
+.exceldata-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.excel-toggle-btn {
+  background: rgba(10, 18, 32, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 10px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.excel-toggle-btn:hover {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-2px);
+}
+
+.excel-toggle-btn.active {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.05));
+  border-color: #a855f7;
+  color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+}
+
+/* Card Container */
+.exceldata-card {
+  background: rgba(10, 18, 32, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  padding: 30px;
+  transition: all 0.3s ease;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exceldata-card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 10px 40px rgba(168, 85, 247, 0.1);
+}
+
+/* Table Container */
+.exceldata-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.exceldata-table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Table Styles */
+.exceldata-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.exceldata-table thead th {
+  text-align: left;
+  padding: 15px 12px;
+  color: rgba(168, 85, 247, 0.8);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+}
+
+.exceldata-table tbody td {
+  padding: 14px 12px;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+}
+
+.exceldata-table tbody tr {
+  transition: all 0.3s ease;
+}
+
+.exceldata-table tbody tr:hover {
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.exceldata-sector-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.exceldata-avg-cell {
+  color: #a855f7 !important;
+  font-weight: 600;
+}
+
+/* Chart Container */
+.multi-chart-container {
+  width: 100%;
+  height: 350px;
+}
+
+/* Description */
+.exceldata-description {
+  text-align: center;
+  margin-bottom: -1rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Decoration */
+.exceldata-decoration {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.06);
+  z-index: 1;
+  font-family: monospace;
+  letter-spacing: 3px;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .exceldata-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .exceldata-card {
+    padding: 25px;
+    min-height: 400px;
+  }
+  
+  .multi-chart-container {
+    height: 320px;
+  }
+  
+  .exceldata-table thead th,
+  .exceldata-table tbody td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .exceldata-section {
+    padding: 2rem 1.2rem;
+  }
+  
+  .slide-title-neon {
+    margin-bottom: 2rem;
+  }
+  
+  .exceldata-controls {
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+  
+  .excel-toggle-btn {
+    padding: 8px 18px;
+    font-size: 0.75rem;
+  }
+  
+  .exceldata-card {
+    padding: 20px;
+    min-height: 380px;
+  }
+  
+  .multi-chart-container {
+    height: 300px;
+  }
+  
+  .exceldata-table thead th {
+    padding: 10px 8px;
+    font-size: 0.75rem;
+  }
+  
+  .exceldata-table tbody td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .exceldata-description {
+    margin-top: 25px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .exceldata-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .excel-toggle-btn {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .exceldata-card {
+    padding: 15px;
+    min-height: 350px;
+  }
+  
+  .multi-chart-container {
+    height: 280px;
+  }
+  
+  .exceldata-table thead th,
+  .exceldata-table tbody td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+  
+  .exceldata-table {
+    font-size: 0.75rem;
+  }
+  
+  .exceldata-sector-indicator {
+    width: 6px;
+    height: 6px;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exceldata-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .slide-title-neon {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .exceldata-card {
+    padding: 12px;
+    min-height: 320px;
+    border-radius: 20px;
+  }
+  
+  .multi-chart-container {
+    height: 260px;
+  }
+  
+  .exceldata-table thead th {
+    padding: 8px 4px;
+    font-size: 0.65rem;
+    letter-spacing: 0px;
+  }
+  
+  .exceldata-table tbody td {
+    padding: 8px 4px;
+    font-size: 0.7rem;
+  }
+  
+  .exceldata-avg-cell {
+    font-size: 0.7rem;
+  }
+  
+  .exceldata-description {
+    margin-top: 20px;
+    font-size: 0.7rem;
+    padding: 0 10px;
+  }
+  
+  .exceldata-grid-icon {
+    top: 10%;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .exceldata-table thead th {
+    font-size: 0.6rem;
+    padding: 6px 3px;
+  }
+  
+  .exceldata-table tbody td {
+    padding: 6px 3px;
+    font-size: 0.65rem;
+  }
+  
+  .multi-chart-container {
+    height: 240px;
+  }
+  
+  .excel-toggle-btn {
+    font-size: 0.7rem;
+    padding: 6px 15px;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .exceldata-section {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .slide-title-neon {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .exceldata-card {
+    min-height: 280px;
+    padding: 15px;
+  }
+  
+  .multi-chart-container {
+    height: 220px;
+  }
+  
+  .exceldata-controls {
+    margin-bottom: 15px;
+  }
+  
+  .exceldata-description {
+    margin-top: 15px;
+  }
+}
+
+/* Tablet Landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .exceldata-card {
+    min-height: 350px;
+  }
+  
+  .multi-chart-container {
+    height: 300px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1440px) {
+  .exceldata-table-wrapper {
+    max-width: 1400px;
+  }
+  
+  .exceldata-card {
+    min-height: 500px;
+  }
+  
+  .multi-chart-container {
+    height: 400px;
+  }
+  
+  .exceldata-table thead th,
+  .exceldata-table tbody td {
+    padding: 18px 15px;
+    font-size: 1rem;
+  }
+}
+
+/* Ultra Wide Screens */
+@media (min-width: 1920px) {
+  .exceldata-table-wrapper {
+    max-width: 1600px;
+  }
+  
+  .multi-chart-container {
+    height: 450px;
+  }
+}
+
+/* Touch Devices */
+@media (hover: none) and (pointer: coarse) {
+  .excel-toggle-btn {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .excel-toggle-btn:active {
+    transform: scale(0.98);
+  }
+  
+  .exceldata-table tbody tr {
+    cursor: pointer;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .exceldata-particle,
+  .exceldata-card,
+  .excel-toggle-btn {
+    animation: none;
+    transition: none;
+  }
+  
+  .exceldata-particle {
+    display: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .exceldata-section {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .exceldata-card {
+    border: 1px solid #ddd;
+    background: white;
+    box-shadow: none;
+  }
+  
+  .exceldata-controls {
+    display: none;
+  }
+  
+  .exceldata-particles,
+  .exceldata-grid-icon,
+  .exceldata-decoration {
+    display: none;
+  }
+  
+  .slide-title-neon {
+    color: black !important;
+  }
+  
+  .exceldata-table {
+    color: black;
+  }
+  
+  .exceldata-table tbody td {
+    color: #333;
+  }
+}
+
+/* Loading State */
+.exceldata-card.loading {
+  background: linear-gradient(90deg, #0a1220 25%, #0f1a2a 50%, #0a1220 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Chart Tooltip Customization */
+.recharts-tooltip-wrapper {
+  z-index: 100;
+}
+
+.recharts-default-tooltip {
+  background-color: rgba(10, 18, 32, 0.95) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Table Scroll Indicator */
+.exceldata-table-responsive::-webkit-scrollbar {
+  height: 4px;
+}
+
+.exceldata-table-responsive::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.exceldata-table-responsive::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 10px;
+}
+
+/* Smooth Transitions */
+.exceldata-card,
+.excel-toggle-btn,
+.exceldata-table tbody tr {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects for Desktop */
+@media (min-width: 1024px) {
+  .exceldata-table tbody tr:hover td {
+    color: #fff;
+  }
+  
+  .exceldata-table tbody tr:hover .exceldata-avg-cell {
+    color: #c084fc !important;
+  }
+}
+

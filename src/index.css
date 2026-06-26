@@ -1,0 +1,283 @@
+/* ==========================================================================
+   GOOGLE FONTS IMPORT
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #03020a;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.fullscreen-slide {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 40px;
+  position: relative;
+  background: radial-gradient(circle at 20% 30%, rgba(168, 85, 247, 0.08) 0%, rgba(3, 2, 10, 0) 70%);
+}
+
+/* ==========================================================================
+   SLIDE TITLE - FULLY RESPONSIVE WITH PERFECT TEXT WRAPPING
+   ========================================================================== */
+.slide-title-neon {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 10px !important;
+  text-align: center !important;
+  
+  /* Layout & Spacing */
+  position: relative !important;
+  display: inline-block !important; 
+  padding: 12px 36px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 90vw !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+
+  /* Animated Cyberpunk Background */
+  background-image: linear-gradient(
+    135deg, 
+    #0f172a 0%,         
+    #1e1b4b 35%,        
+    #2e1065 70%,        
+    #0f172a 100%        
+  ) !important;
+  background-size: 300% 300% !important;
+
+  
+  /* Smooth Color Changing Text Setup */
+  background-image: linear-gradient(
+    to right, 
+    #ffffff 0%, 
+    #a855f7 35%, 
+    #22d3ee 70%, 
+    #ffffff 100%
+  ) !important;
+  background-size: 300% auto !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+
+  /* MULTIPLE ANIMATIONS */
+  animation: 
+    textColorChange 6s ease infinite,
+    bgMove 8s ease infinite, 
+    floatAction 4s ease-in-out infinite !important;
+}
+
+/* ==========================================================================
+   ANIMATION KEYFRAMES
+   ========================================================================== */
+
+/* Text Color Change Keyframe */
+@keyframes textColorChange {
+  0% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+/* Background Move Keyframe */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Action Keyframe */
+@keyframes floatAction {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   🚫 MOBILE DEVICES - HIDE TITLE
+   ========================================================================== */
+
+/* 📱 Hide on all mobile devices (up to 768px) */
+@media (max-width: 768px) {
+  .slide-title-neon {
+    display: none !important; /* Completely hide the title */
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+  }
+  
+  .fullscreen-slide {
+    padding: 60px 20px 40px 20px !important;
+  }
+}
+
+/* ==========================================================================
+   🚫 TABLETS - Option 1: Hide completely (uncomment if needed)
+   ========================================================================== */
+/* 
+@media (min-width: 769px) and (max-width: 1024px) {
+  .slide-title-neon {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+  }
+}
+*/
+
+/* ==========================================================================
+   🚫 TABLETS - Option 2: Show but smaller (default - keep visible)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .fullscreen-slide {
+    padding: 70px 30px 50px 30px !important;
+  }
+  
+  .slide-title-neon {
+    font-size: 2.2rem !important;
+    padding: 16px 40px !important;
+    max-width: 85vw !important;
+    letter-spacing: 2px !important;
+    /* Title is visible on tablets */
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ==========================================================================
+   💻 SMALL LAPTOPS (1025px - 1366px)
+   ========================================================================== */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .slide-title-neon {
+    font-size: 2.4rem !important;
+    padding: 16px 44px !important;
+    max-width: 80vw !important;
+  }
+}
+
+/* ==========================================================================
+   🖥️ LARGE SCREENS (1367px - 1920px)
+   ========================================================================== */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  .slide-title-neon {
+    font-size: 2.8rem !important;
+    padding: 18px 52px !important;
+    max-width: 70vw !important;
+    letter-spacing: 2.5px !important;
+  }
+}
+
+/* ==========================================================================
+   🖥️ ULTRA WIDE SCREENS (>= 1921px)
+   ========================================================================== */
+@media (min-width: 1921px) {
+  .slide-title-neon {
+    font-size: 3.2rem !important;
+    padding: 20px 60px !important;
+    max-width: 60vw !important;
+    letter-spacing: 3px !important;
+  }
+}
+
+/* ==========================================================================
+   LANDSCAPE MODE FIX FOR MOBILE (Title still hidden)
+   ========================================================================== */
+@media (max-height: 600px) and (orientation: landscape) {
+  .slide-title-neon {
+    display: none !important; /* Still hidden in landscape mode */
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+  }
+  
+  .fullscreen-slide {
+    padding: 30px 20px !important;
+    min-height: 100vh !important;
+  }
+}
+
+/* ==========================================================================
+   HIGH DPI / RETINA DISPLAYS
+   ========================================================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .slide-title-neon {
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION PREFERENCE (Accessibility)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .slide-title-neon {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .slide-title-neon:hover {
+    transform: none !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   PRINT STYLES
+   ========================================================================== */
+@media print {
+  .slide-title-neon {
+    background: #1e1b4b !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    border: 2px solid #a855f7 !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+}

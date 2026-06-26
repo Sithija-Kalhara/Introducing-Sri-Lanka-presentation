@@ -1,0 +1,468 @@
+/* Hero.css - Fully Responsive Flag with 912x1368 Support */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0b2e 50%, #0a0a0a 100%);
+}
+
+/* Fullscreen slide compatibility */
+.fullscreen-slide {
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* Flag Container - Fully Responsive */
+.flag-container {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.flag-image {
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  max-height: 45vh;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(168, 85, 247, 0.4));
+  animation: floatFlag 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* Hero Content Container - Below Flag */
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  padding: 0 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+.hero-title {
+  text-transform: capitalize;
+}
+
+/* Badge / Tagline */
+.hero-badge {
+  color: #a855f7;
+  letter-spacing: 4px;
+  font-size: clamp(0.7rem, 3vw, 0.9rem);
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-block;
+  background: rgba(168, 85, 247, 0.1);
+  padding: clamp(4px, 2vw, 8px) clamp(12px, 4vw, 20px);
+  border-radius: 40px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  white-space: nowrap;
+}
+
+/* Responsive badge for small screens */
+@media (max-width: 480px) {
+  .hero-badge {
+    letter-spacing: 2px;
+    white-space: normal;
+    font-size: 0.65rem;
+  }
+}
+
+/* Main Title */
+.hero-title {
+  font-family: 'Space Grotesk', monospace;
+  font-size: clamp(2rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0;
+  color: white;
+}
+
+/* Title Highlight Span */
+.hero-title-highlight {
+  color: #a855f7;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+  display: inline-block;
+  position: relative;
+  animation: letterGlow 3s ease-in-out infinite;
+}
+
+/* Animated underline effect */
+.hero-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: clamp(-5px, -2vw, -10px);
+  left: 0;
+  width: 100%;
+  height: clamp(2px, 0.3vw, 3px);
+  background: linear-gradient(90deg, transparent, #a855f7, #fdb913, #a855f7, transparent);
+  border-radius: 3px;
+  animation: underlineFlow 3s ease-in-out infinite;
+}
+
+/* Decorative elements */
+.hero-decoration {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: clamp(0.5rem, 2.5vw, 0.75rem);
+  color: rgba(255, 255, 255, 0.08);
+  z-index: 2;
+  font-family: monospace;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+
+/* Responsive decoration */
+@media (max-width: 768px) {
+  .hero-decoration {
+    bottom: 20px;
+    letter-spacing: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-decoration {
+    bottom: 15px;
+    letter-spacing: 1px;
+    white-space: normal;
+    font-size: 0.5rem;
+  }
+}
+
+/* ========== RESPONSIVE FLAG SIZING - ALL DEVICES ========== */
+
+/* Surface Pro 7 & Similar (912x1368) */
+@media (min-width: 900px) and (max-width: 950px) and (min-height: 1300px) and (max-height: 1400px) {
+  .fullscreen-slide {
+    margin-top: 15rem;
+  }
+  
+  .flag-container {
+    margin-bottom: 5px;
+    margin-top: -30px;
+  }
+  
+  .flag-image {
+    max-width: 85%;
+    max-height: 40vh;
+  }
+  
+  .hero-content {
+    margin-top: -10px;
+  }
+  
+  .hero-badge {
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    padding: 5px 16px;
+  }
+  
+  .hero-title {
+    font-size: 3.3rem;
+  }
+  
+  .hero-decoration {
+    bottom: 25px;
+    font-size: 0.65rem;
+  }
+}
+
+/* Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .flag-image {
+    max-width: 70%;
+    max-height: 50vh;
+  }
+}
+
+/* Desktop (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .flag-image {
+    max-width: 75%;
+    max-height: 48vh;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .flag-image {
+    max-width: 80%;
+    max-height: 45vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 15px;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .flag-image {
+    max-width: 85%;
+    max-height: 40vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 15px;
+  }
+}
+
+/* Mobile Large (481px - 575px) */
+@media (min-width: 481px) and (max-width: 575px) {
+  .flag-image {
+    max-width: 88%;
+    max-height: 38vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 12px;
+  }
+}
+
+/* Mobile Medium (376px - 480px) */
+@media (min-width: 376px) and (max-width: 480px) {
+  .flag-image {
+    max-width: 90%;
+    max-height: 35vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 10px;
+  }
+}
+
+/* Mobile Small (321px - 375px) */
+@media (min-width: 321px) and (max-width: 375px) {
+  .flag-image {
+    max-width: 92%;
+    max-height: 32vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 8px;
+  }
+}
+
+/* Mobile Extra Small (up to 320px) */
+@media (max-width: 320px) {
+  .flag-image {
+    max-width: 95%;
+    max-height: 28vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 8px;
+  }
+}
+
+/* ========== LANDSCAPE MODE SUPPORT ========== */
+@media (orientation: landscape) {
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    justify-content: center;
+  }
+  
+  .flag-image {
+    max-height: 40vh;
+  }
+}
+
+/* Landscape with limited height */
+@media (orientation: landscape) and (max-height: 600px) {
+  .hero-section {
+    padding: 20px 0;
+  }
+  
+  .flag-image {
+    max-height: 35vh;
+  }
+  
+  .flag-container {
+    margin-bottom: 8px;
+  }
+  
+  .hero-title {
+    font-size: clamp(1.5rem, 5vh, 2.5rem);
+  }
+}
+
+/* Landscape on very short screens */
+@media (orientation: landscape) and (max-height: 450px) {
+  .flag-image {
+    max-height: 30vh;
+  }
+  
+  .hero-badge {
+    margin-bottom: 8px;
+  }
+}
+
+/* Landscape mode for Surface Pro 7 */
+@media (orientation: landscape) and (min-width: 1300px) and (max-width: 1400px) and (min-height: 900px) and (max-height: 950px) {
+  .fullscreen-slide {
+    margin-top: 15rem;
+  }
+  
+  .flag-image {
+    max-height: 55vh;
+    max-width: 60%;
+  }
+  
+  .flag-container {
+    margin-top: -20px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+/* ========== HIGH DPI / RETINA DISPLAYS ========== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .flag-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ========== FOLDABLE / DUAL SCREEN DEVICES ========== */
+@media (max-width: 280px) {
+  .flag-image {
+    max-width: 98%;
+    max-height: 25vh;
+  }
+  
+  .hero-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Floating particles - Background */
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-particle {
+  position: absolute;
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 50%;
+  animation: floatParticle 10s infinite ease-in-out;
+}
+
+/* Particle positions */
+.particle-1 { top: 15%; left: 10%; animation-delay: 0s; width: clamp(2px, 0.5vw, 3px); height: clamp(2px, 0.5vw, 3px); }
+.particle-2 { top: 70%; left: 85%; animation-delay: 2s; width: clamp(2px, 0.6vw, 4px); height: clamp(2px, 0.6vw, 4px); }
+.particle-3 { top: 85%; left: 20%; animation-delay: 4s; width: clamp(1.5px, 0.4vw, 2.5px); height: clamp(1.5px, 0.4vw, 2.5px); }
+.particle-4 { top: 30%; left: 90%; animation-delay: 1s; width: clamp(2px, 0.7vw, 5px); height: clamp(2px, 0.7vw, 5px); }
+.particle-5 { top: 50%; left: 5%; animation-delay: 3s; width: clamp(1.5px, 0.4vw, 2.5px); height: clamp(1.5px, 0.4vw, 2.5px); }
+.particle-6 { top: 10%; left: 95%; animation-delay: 5s; width: clamp(2px, 0.6vw, 4px); height: clamp(2px, 0.6vw, 4px); }
+.particle-7 { top: 90%; left: 50%; animation-delay: 2.5s; width: clamp(1.5px, 0.4vw, 2.5px); height: clamp(1.5px, 0.4vw, 2.5px); }
+.particle-8 { top: 45%; left: 15%; animation-delay: 6s; width: clamp(2px, 0.6vw, 4px); height: clamp(2px, 0.6vw, 4px); }
+
+/* Hide particles on very small devices */
+@media (max-width: 480px) {
+  .hero-particle {
+    display: none;
+  }
+}
+
+/* Animations */
+@keyframes floatFlag {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes underlineFlow {
+  0%, 100% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes letterGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(168, 85, 247, 0.6);
+  }
+}
+
+/* Responsive helper for very small devices */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  
+  .hero-content {
+    padding: 0 15px;
+  }
+}
+
+/* Tablet specific adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title {
+    font-size: clamp(3rem, 7vw, 4.5rem);
+  }
+}
+
+/* Ensure proper scrolling */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

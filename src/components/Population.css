@@ -1,0 +1,50 @@
+
+
+.population-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 60px;
+  width: 100%;
+  max-width: 1100px;
+  align-items: center;
+  z-index: 2;
+}
+
+.flag-card {
+  height: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0a2e, #03020a);
+}
+
+.flag-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+
+  
+}
+
+.population-subtitle {
+  color: #a855f7;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.population-number {
+  font-size: clamp(4rem, 10vw, 6.5rem);
+  font-family: 'Space Grotesk', sans-serif;
+  color: #a855f7;
+  margin: 0; /* default margins අයින් කිරීමට */
+}
+
+.population-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-top: 20px;
+}

@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Urbanist:wght@300;400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050508;
+  color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
+  overflow: hidden;
+}
+
+/* Smooth Auto-Scrolling Snap Engine */
+.scroll-snap-presentation {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.fullscreen-slide {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 100px;
+  position: relative;
+  overflow: hidden;
+  background-color: #070708;
+}
+
+/* Background grid effect for all pages */
+.fullscreen-slide::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(168, 85, 247, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+

@@ -1,0 +1,15 @@
+.Home {
+  background-color: #03020a;
+  overflow-x: hidden;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.scroll-container > section {
+  scroll-snap-align: start;
+}
